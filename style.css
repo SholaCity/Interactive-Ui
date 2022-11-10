@@ -1,0 +1,150 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --LightGrey: hsl(217, 12%, 63%);
+    --MediumGrey: hsl(216, 12%, 54%);
+    --MediumGreyTrans: hsl(216, 12%, 54%, 0.5);
+    --DarkBlue: hsl(213, 19%, 18%);
+    --VeryDarkBlue: hsl(216, 12%, 8%);
+    --Orange: hsl(25, 97%, 53%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    /* outline: 2px solid #ff0000; */
+    border: none;
+    box-sizing: border-box;
+    appearance: none;
+    font-family: 'Space Mono', monospace;
+    /* background-color: rgba(167, 255, 226, 0.479); */
+    font-size: 16px;
+    transition: 300ms linear;
+}
+
+p {
+    color: var(--MediumGrey);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--VeryDarkBlue);
+}
+
+.container {
+    width: min(430px, 90%);
+    min-height: 400px;
+    padding: 1.8rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 1rem;
+    background-color: var(--DarkBlue);
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    color: var(--White);
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.container.rating {
+    padding-top: 3rem;
+}
+
+.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.thanks {
+    text-align: center;
+}
+
+.container.rating .icon {
+    width: 30px;
+    height: 30px;
+    padding: 0.2rem;
+    border-radius: 10px;
+    background-color: var(--MediumGrey);
+}
+
+
+
+.rating .rates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rates input[type="radio"][name="buttonGroup"] {
+    display: none;
+}
+
+label {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: var(--White);
+    background-color: var(--MediumGreyTrans);
+    cursor: pointer;
+}
+
+.rates input[type="radio"][name="buttonGroup"]:checked+label {
+    background-color: var(--Orange);
+}
+
+label:hover {
+    background-color: var(--MediumGrey);
+}
+
+.rate-btn.selected {
+    background-color: var(--Orange);
+
+}
+
+.rating .submit {
+    width: 100%;
+    color: var(--White);
+    background-color: var(--Orange);
+    border: 2px solid var(--Orange);
+    padding: 0.75rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 40px;
+    text-transform: uppercase;
+}
+
+.submit:hover {
+    background-color: var(--White);
+    color: var(--DarkBlue);
+
+}
+
+
+.thanks img {
+    width: 200px;
+    margin-inline: auto;
+}
+
+.thanks p.result {
+    width: fit-content;
+    margin-inline: auto;
+    padding: 0.3rem 0.5rem;
+    border-radius: 20px;
+    background-color: var(--MediumGreyTrans);
+    color: var(--Orange);
+}
